@@ -26,3 +26,575 @@ body {
   width: 3em;
 }
 
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+:root {
+  --backgradient: radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+  --scissors: radial-gradient(hsl(136, 0%, 100%) 50%,hsl(39, 89%, 49%) 60%,hsl(40, 84%, 53%) 100%);
+  --paper: radial-gradient(hsl(136, 0%, 100%) 50%,hsl(230, 89%, 65%) 60%,hsl(230, 31%, 37%) 100%);
+  --rock: radial-gradient(hsl(136, 0%, 100%) 50%,hsl(349, 71%, 52%) 60%,hsl(349, 70%, 56%) 100%);
+  --lizard: radial-gradient(hsl(136, 0%, 100%) 50%,hsl(261, 73%, 60%) 60%,hsl(261, 72%, 63%) 100%);
+  --spock: radial-gradient(hsl(136, 0%, 100%) 50%,hsl(189, 59%, 53%) 60%,hsl(189, 58%, 57%) 100%);
+  --darkText: hsl(229, 25%, 31%);
+  --scoreText: hsl(229, 64%, 46%);
+  --headerOutline: hsl(217, 16%, 45%);
+}
+
+body {
+  background: var(--backgradient);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: block;
+  width: 475px;
+  height: 100%;
+  margin: auto;
+}
+
+.hiddenspace {
+  display: none;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 3px solid var(--headerOutline);
+  width: 90%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: .5em;
+  padding: .5em;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+img.title {
+  width: 70px;
+  height: 70px;
+}
+
+.score-info {
+  position: relative;
+  width: 75px;
+}
+
+.score-info #score-el {
+  position: absolute;
+  background: white;
+  color: #606e85;
+  font-size: 10px;
+  width: 75px;
+  height: 60px;
+  text-align: center;
+  padding-top: 1em;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+.score-info #score-num {
+  position: relative;
+  color: var(--scoreText);
+  font-size: 40px;
+  margin-top: .5em;
+  text-align: center;
+}
+
+.gamespace {
+  display: none;
+  position: relative;
+}
+
+.gamespace .pentagonspace {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 35%;
+}
+
+.gamespace .pentagonspace .pentagon {
+  width: 100%;
+  height: 100%;
+}
+
+.gamespace .buttongrid {
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  gap: 5px;
+  width: 200px;
+  height: 200px;
+  margin-left: 10%;
+  margin-top: 18%;
+  -ms-grid-columns: (30px)[10];
+      grid-template-columns: repeat(10, 30px);
+  -ms-grid-rows: (30px)[10];
+      grid-template-rows: repeat(10, 30px);
+}
+
+.gamespace .buttongrid .mainscissorsbutton {
+  background: var(--scissors);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 1em;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-column: 5 / span 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / span 3;
+}
+
+.gamespace .buttongrid .mainscissorsbutton .mainscissorsimg {
+  padding: .75em;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+}
+
+.gamespace .buttongrid .mainscissorsbutton .mainscissorsimg:hover {
+  cursor: pointer;
+}
+
+.gamespace .buttongrid .mainspockbutton {
+  background: var(--spock);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 1em;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / span 3;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 3;
+  grid-row: 4 / span 3;
+}
+
+.gamespace .buttongrid .mainspockbutton .mainspockimg {
+  padding: .75em;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+}
+
+.gamespace .buttongrid .mainspockbutton .mainspockimg:hover {
+  cursor: pointer;
+}
+
+.gamespace .buttongrid .mainpaperbutton {
+  background: var(--paper);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 1em;
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 3;
+  grid-column: 8 / span 3;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 3;
+  grid-row: 4 / span 3;
+}
+
+.gamespace .buttongrid .mainpaperbutton .mainpaperimg {
+  padding: .75em;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+}
+
+.gamespace .buttongrid .mainpaperbutton .mainpaperimg:hover {
+  cursor: pointer;
+}
+
+.gamespace .buttongrid .mainlizardbutton {
+  background: var(--lizard);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 1em;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-column: 3 / span 3;
+  -ms-grid-row: 8;
+  -ms-grid-row-span: 3;
+  grid-row: 8 / span 3;
+}
+
+.gamespace .buttongrid .mainlizardbutton .mainlizardimg {
+  padding: .75em;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+}
+
+.gamespace .buttongrid .mainlizardbutton .mainlizardimg:hover {
+  cursor: pointer;
+}
+
+.gamespace .buttongrid .mainrockbutton {
+  background: var(--rock);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 1em;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 3;
+  grid-column: 7 / span 3;
+  -ms-grid-row: 8;
+  -ms-grid-row-span: 3;
+  grid-row: 8 / span 3;
+}
+
+.gamespace .buttongrid .mainrockbutton .mainrockimg {
+  padding: .75em;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+}
+
+.gamespace .buttongrid .mainrockbutton .mainrockimg:hover {
+  cursor: pointer;
+}
+
+.activespace {
+  display: none;
+  position: relative;
+}
+
+.activespace .activecontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 475px;
+  height: 250px;
+  margin-top: 8em;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.activespace .activecontainer .activegrid {
+  position: absolute;
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: .75em;
+  display: -ms-grid;
+  display: grid;
+  gap: 0;
+  width: 200px;
+  height: 200px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+}
+
+.activespace .activecontainer .activegrid .yourel {
+  width: 125px;
+  height: 50px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+}
+
+.activespace .activecontainer .activegrid .houseel {
+  width: 125px;
+  height: 50px;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+}
+
+.activespace .activecontainer .activegrid .winlose {
+  display: none;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+  width: 200px;
+  height: 50px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / span 1;
+}
+
+.activespace .activecontainer .activegrid button.play {
+  display: none;
+  background: white;
+  color: #3b4363;
+  width: 200px;
+  height: 40px;
+  padding: .5em 1em;
+  letter-spacing: 1.5px;
+  border-radius: 7px;
+  font-weight: bold;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 / span 1;
+}
+
+.activespace .activecontainer .activegrid button.play:hover {
+  cursor: pointer;
+}
+
+.activespace .activecontainer .activegrid .yourpick {
+  color: white;
+  text-align: center;
+  margin-top: -7em;
+  width: 125px;
+  height: 25px;
+  padding-top: 1em;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / span 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / span 1;
+}
+
+.activespace .activecontainer .activegrid .housepick {
+  color: white;
+  text-align: center;
+  margin-top: -7em;
+  width: 125px;
+  height: 25px;
+  padding-top: 1em;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / span 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / span 1;
+}
+
+.activespace .activecontainer .activegrid .scissors-button {
+  background: var(--scissors);
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+}
+
+.activespace .activecontainer .activegrid .scissors-button .scissors-img {
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+  margin-top: 2.5em;
+  margin-left: 2.2em;
+}
+
+.activespace .activecontainer .activegrid .spock-button {
+  background: var(--spock);
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+}
+
+.activespace .activecontainer .activegrid .spock-button .spock-img {
+  padding: 0 2.65em;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+  margin-top: 2.5em;
+}
+
+.activespace .activecontainer .activegrid .paper-button {
+  background: var(--paper);
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+}
+
+.activespace .activecontainer .activegrid .paper-button .paper-img {
+  padding: 0 .5em 0 0;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+  margin-top: 2.5em;
+  margin-left: 2.2em;
+}
+
+.activespace .activecontainer .activegrid .lizard-button {
+  background: var(--lizard);
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+}
+
+.activespace .activecontainer .activegrid .lizard-button .lizard-img {
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+  margin-top: 2.5em;
+  margin-left: 2.2em;
+}
+
+.activespace .activecontainer .activegrid .rock-button {
+  background: var(--rock);
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+}
+
+.activespace .activecontainer .activegrid .rock-button .rock-img {
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  opacity: 100%;
+  border: none;
+  margin-top: 2.5em;
+  margin-left: 2.2em;
+}
+
+button.rules {
+  display: block;
+  background: none;
+  border: 3px solid #606e85;
+  border-radius: 7px;
+  color: white;
+  bottom: 0;
+  width: 100px;
+  margin-top: 38em;
+  margin-bottom: 3em;
+  padding: .5em;
+  letter-spacing: 1.5px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+button.rules:hover {
+  cursor: pointer;
+}
+
+footer {
+  display: block;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: .5em;
+}
+
+footer a {
+  color: #5671f5;
+}
+
+.rulespopup {
+  display: none;
+  position: relative;
+}
+
+.rulespopup .rulescontainer {
+  background: white;
+  position: absolute;
+  border: 1px solid #3b4363;
+  border-radius: 8px;
+  z-index: 999;
+  width: 375px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.rulespopup .rulescontainer .rulestitle {
+  background: white;
+  color: #6a6f81;
+  font-size: 30px;
+  text-align: center;
+  margin-top: .5em;
+  width: auto;
+}
+
+.rulespopup .rulescontainer #deletescore-el {
+  position: absolute;
+  z-index: 999;
+  color: red;
+  font-size: smaller;
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.rulespopup .rulescontainer #deletescore-el:hover {
+  cursor: pointer;
+}
+
+.rulespopup .rulescontainer .rulesimage {
+  position: absolute;
+  z-index: 998;
+  width: 90%;
+  height: 60%;
+  margin: auto;
+  margin-top: 1.5em;
+  left: 0;
+  right: 0;
+  padding: 2em 0;
+}
+
+.rulespopup .rulescontainer .closeimage {
+  position: absolute;
+  z-index: 999;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.rulespopup .rulescontainer .closeimage:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
