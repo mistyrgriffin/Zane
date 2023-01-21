@@ -1,1 +1,28 @@
+:root {
+	--boxColor: #0ff7;
+}
+
+body {
+	background-color: #000;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+}
+
+.scene {
+	position: relative;
+}
+
+.ball {
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	background-color: lightblue;
+}
+
+.box {
+  width: 3em;
+}
 
