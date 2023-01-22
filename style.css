@@ -6,7 +6,7 @@
   --hue: 200;
   --saturation: 50%;
   --foreground-color: hsl(var(--hue), var(--saturation), 75%);
-  --foreground-color: hsl(var(--hue), var(--saturation), 20%);
+  --background-color: hsl(var(--hue), var(--saturation), 20%);
 }
 
 body {
