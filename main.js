@@ -6,4 +6,4 @@ let rederer = Matter.Render.create({
 })
 
 Matter.Render.run(rederer)
-Matter.Engine.run(engine)
+Matter.Runner.run(engine)
