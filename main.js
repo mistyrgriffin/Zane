@@ -4,7 +4,7 @@ let rederer = Matter.Render.create({
     element: document.body,
     engine: engine,
     options: {
-        height: 600
+        height: 600,
         width: 800
     }
 })
