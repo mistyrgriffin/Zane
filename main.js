@@ -10,7 +10,7 @@ let rederer = Matter.Render.create({
     }
 })
 
-let ground = Matter.Bodies.rectangle(600, 400, 200, 30),
+let ground = Matter.Bodies.rectangle(600, 400, 200, 30 {
     isStatic: true,
     render: {
         fillStyle: 'brown'
