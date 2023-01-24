@@ -15,7 +15,7 @@ let ground = Matter.Bodies.rectangle(600, 400, 200, 30 {
     render: {
         fillStyle: 'brown'
     }
-
+})
 
 Matter.World.add(engine.world, ground)
 
